@@ -1,6 +1,6 @@
 function Header() {
 
-    return (<h1>Please log in</h1>);
+    return (<h1>Lost in Translation</h1>);
 
 }
 

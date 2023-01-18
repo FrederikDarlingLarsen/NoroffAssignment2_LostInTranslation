@@ -67,6 +67,6 @@
 .loginBox{
   background-color: lightgray;
   margin: calc(150px + 1vmin);
-  padding: calc(30px + 1vmin) ;
-  border-radius: 20px;
+  padding: calc(20px + 1vmin) ;
+  border-radius: 70px;
 }

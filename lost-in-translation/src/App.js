@@ -1,11 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import Header from './Components/Header.jsx';
-import Main from './Components/Main.jsx';
 import HeaderProfile from './Components/HeaderProfile';
+
+import StartUp from './Components/StartUp';
+import Translation from './Components/Translation';
+import Profile from './Components/Profile';
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
       <header className="App-header">
       <Header/>
@@ -13,12 +20,16 @@ function App() {
       </header>
       
     
-      <Main/>
-        {/* <img src="https://vignette.wikia.nocookie.net/objectadversity/images/0/04/Awesome_Face_Pose_6_2017.png/revision/latest?cb=20170802141654" className="App-logo" alt="logo" /> */}
+      <Routes>
+        <Route path="/" element={<StartUp/>}/>
+        <Route path="/Translation" element={<Translation/>}/>
+        <Route path="/Profile" element={<Profile/>}/>
+      </Routes>
        
      
      <br/>
     </div>
+    </BrowserRouter>
   );
 }
 

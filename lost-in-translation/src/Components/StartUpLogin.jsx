@@ -3,7 +3,7 @@ function StartUpLogin(){
     return(
         
         <div className="loginBox">
-        <h3>Please Login here:</h3>
+        
 
         <form >
   <label>
