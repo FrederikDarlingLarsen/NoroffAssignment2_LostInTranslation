@@ -1,4 +1,18 @@
+import ProfileHistory from "./ProfileHistory";
+import ProfileInfo from "./ProfileInfo";
+
 const Profile = () => {
-  return (<h1>This is profile</h1>);
+  
+  return (
+    <>
+      <h1>Profile</h1>
+
+  
+      <ProfileInfo />
+
+ 
+      <ProfileHistory />
+    </>
+  );
 };
-export default Profile
+export default Profile;

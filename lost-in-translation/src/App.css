@@ -40,13 +40,11 @@
   }
 }
 
-.profilePic{
-
+.profilePic {
   align-items: right;
-
 }
 
-.loginForm{
+.loginForm {
   margin: 10px;
   width: calc(200px + 1vmin);
   border: 30px gray;
@@ -55,18 +53,68 @@
   padding: 12px 20px;
 }
 
-.loginButton{
+.loginButton {
   width: calc(100px + 1vmin);
   padding: 12px 20px;
-  
   border-radius: 10px;
   background-color: rgb(187, 192, 255);
 }
 
+.loginBox {
+  background-color: #61dafb;
+  margin-left: calc(150px + 1vmin);
+  margin-right: calc(150px + 1vmin);
+  padding: calc(20px + 1vmin);
+  border-radius: 50px;
 
-.loginBox{
-  background-color: lightgray;
-  margin: calc(150px + 1vmin);
-  padding: calc(20px + 1vmin) ;
-  border-radius: 70px;
+  margin-bottom: 20px;
+
+}
+
+.EnterTrans {
+  padding: calc(30px + 1vmin);
+  background-color: #61dafb;
+  margin-left: calc(200px + 1vmin);
+  margin-right: calc(200px + 1vmin);
+  border-radius: 50px;
+}
+
+
+
+.EnterText {
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.ShowBox {
+  padding: calc(80px + 1vmin);
+  background-color: #61dafb;
+  margin-left: calc(200px + 1vmin);
+  margin-right: calc(200px + 1vmin);
+  margin-top: calc(20px + 1vmin);
+  border-radius: 30px;
+}
+
+
+.ProfileInfoBox{
+  padding: calc(10px + 1vmin);
+  background-color: #61dafb;
+  margin-left: calc(200px + 1vmin);
+  margin-right: calc(200px + 1vmin);
+  margin-top: calc(20px + 1vmin);
+  border-radius: 50px;
+}
+
+
+.ProfileHistoryBox{
+  padding: calc(80px + 1vmin);
+  background-color: #61dafb;
+  margin-left: calc(200px + 1vmin);
+  margin-right: calc(200px + 1vmin);
+  margin-top: calc(20px + 1vmin);
+  border-radius: 50px;
+}
+
+a{
+  color: white;
 }

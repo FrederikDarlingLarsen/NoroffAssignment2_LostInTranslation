@@ -1,7 +1,12 @@
-function Header() {
+import logo from '../Logo.png';
+const Header = () => {
 
-    return (<h1>Lost in Translation</h1>);
-
+    return (
+    <>
+    <img src={logo} alt="" width="64px" />
+    <h1>Lost in Translation</h1>
+    </>
+    )
 }
 
 export default Header;

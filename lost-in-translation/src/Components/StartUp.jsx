@@ -1,11 +1,17 @@
 import StartUpLogin from "./StartUpLogin";
+import logo from '../Logo-Hello.png';
 
-function StartUp(){
+const StartUp = () => {
     return(
         <>
-        <h2>This is the startup page</h2>
+        {/* <h2>This is the startup page</h2> */}
+        <br />
 
         <StartUpLogin/>
+        
+        <img src={logo} alt="hello" width="300px" />
+
+        
         </>
     );
 
