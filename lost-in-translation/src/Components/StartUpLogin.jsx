@@ -31,7 +31,7 @@ const StartUpLogin = () => {
  // side effect
   useEffect(() => {
     if(user !== null){
-      navigate('Translation')
+      navigate('Profile')
     }
   }, [user, navigate])
 

@@ -9,14 +9,18 @@ import HeaderProfile from './Components/HeaderProfile';
 import StartUp from './Components/StartUp';
 import Translation from './Components/Translation';
 import Profile from './Components/Profile';
+import { useUser } from './context/UserContext';
 
 function App() {
+
+const{user} = useUser()
+
   return (
     <BrowserRouter>
     <div className="App">
       <header className="App-header">
       <Header/>
-      <HeaderProfile/>
+      <HeaderProfile /*username={user.username}*//> 
 
       {/* <nav>
   <NavLink to="/">Go to login</NavLink>
