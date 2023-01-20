@@ -118,3 +118,8 @@
 a{
   color: white;
 }
+
+
+fieldset{
+  border: none;
+}

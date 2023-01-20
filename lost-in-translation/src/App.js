@@ -18,13 +18,13 @@ function App() {
       <Header/>
       <HeaderProfile/>
 
-      <nav>
+      {/* <nav>
   <NavLink to="/">Go to login</NavLink>
   <br/>
   <NavLink to="/Translation">Go to translation</NavLink>
   <br/>
   <NavLink to="/Profile">Go profile</NavLink>
-</nav>
+</nav> */}
       </header>
       
 
