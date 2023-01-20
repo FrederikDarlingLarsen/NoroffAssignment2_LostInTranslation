@@ -1,5 +1,6 @@
 import TranslationEnter from "./TranslationEnter";
 import TranslationShow from "./TranslationShow";
+import withAuth from "../higher-order-components/withAuth";
 
 const Translation = () => {
   return (
@@ -10,4 +11,4 @@ const Translation = () => {
     </>
   );
 };
-export default Translation;
+export default withAuth(Translation);

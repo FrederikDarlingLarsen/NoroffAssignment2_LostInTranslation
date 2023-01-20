@@ -1,5 +1,6 @@
 import ProfileHistory from "./ProfileHistory";
 import ProfileInfo from "./ProfileInfo";
+import withAuth from "../higher-order-components/withAuth";
 
 const Profile = () => {
   
@@ -15,4 +16,4 @@ const Profile = () => {
     </>
   );
 };
-export default Profile;
+export default withAuth(Profile);

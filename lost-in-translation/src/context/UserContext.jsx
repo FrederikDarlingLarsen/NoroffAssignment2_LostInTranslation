@@ -1,4 +1,5 @@
 import { useContext, createContext, useState } from "react"
+import { storageRead } from "../utils/storage"
 
 // context object (exposing state)
 const UserContext = createContext()
@@ -10,7 +11,7 @@ export const useUser = () => {
 // provider => the state (manageing)
 const UserProvider = ({children}) => {
 
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState(storageRead('translate-user'))
 
     const state = {
         user,
