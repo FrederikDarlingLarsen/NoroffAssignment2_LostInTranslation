@@ -15,23 +15,18 @@ function App() {
 
 const{user} = useUser()
 
+let placeholder = "USERNAME"
+
+
   return (
     <BrowserRouter>
     <div className="App">
       <header className="App-header">
       <Header/>
-      <HeaderProfile /*username={user.username}*//> 
-
-      {/* <nav>
-  <NavLink to="/">Go to login</NavLink>
-  <br/>
-  <NavLink to="/Translation">Go to translation</NavLink>
-  <br/>
-  <NavLink to="/Profile">Go profile</NavLink>
-</nav> */}
-      </header>
       
+      <HeaderProfile username={placeholder}/> 
 
+      </header>
 
       <Routes>
         <Route path="/" element={<StartUp/>}/>

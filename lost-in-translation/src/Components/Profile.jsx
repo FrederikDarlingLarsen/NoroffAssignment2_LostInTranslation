@@ -12,6 +12,7 @@ const Profile = () => {
   const logout = () => {
       storageSave('translation-user', null)
       setUser(null)
+     
   }
 
   return (

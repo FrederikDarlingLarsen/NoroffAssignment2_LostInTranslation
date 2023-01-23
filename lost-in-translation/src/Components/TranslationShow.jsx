@@ -1,33 +1,37 @@
-import a from "../individial_signs/a.png";
-import b from "../individial_signs/b.png";
-import c from "../individial_signs/c.png";
-import h from "../individial_signs/h.png";
-import e from "../individial_signs/e.png";
-import l from "../individial_signs/l.png";
-import o from "../individial_signs/o.png";
 
-const TranslationShow = () => {
-  //Get string
+    const renderWords = (aWord) => {
 
-  //loop through chars of string
+      let word = aWord
+      let chars = []
+  
+      for(let i = 0; i < word.length; i++){
+        chars.push(word[i])
+      }
+      
+      let paths = []
+      chars.map((char) => (
+      paths.push (`/individial_signs/${char}.png`)))
+  
+      let elements = []
+      paths.map((path) => (
+        elements.push(<img src={path} alt="hey" width="64px" key={path}/>)))
+  
+        return elements
+      }
+  
 
-  //If input char = letter
+const TranslationShow = (props) => {
 
-  //Image = letter
-
-  let word = "hello"
-
-  //word.map((char) => (<img src={char} alt={} width="64px" />))
+    let theText = renderWords(props.msg)
 
   return (
+    
     <div className="ShowBox">
-      <img src={h} alt={h} width="64px" />
-      <img src={e} alt={e} width="64px" />
-      <img src={l} alt={a} width="64px" />
-      <img src={l} alt={a} width="64px" />
-      <img src={o} alt={a} width="64px" />
+   
+     {theText}
     </div>
-  );
-};
 
-export default TranslationShow;
+  )
+}
+
+export default TranslationShow
