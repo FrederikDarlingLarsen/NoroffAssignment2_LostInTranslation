@@ -32,7 +32,7 @@ const TranslationShow = (props) => {
 
   return (
     
-    <div className="ShowBox">
+    <div className="aBox">
    
      {theText}
     </div>

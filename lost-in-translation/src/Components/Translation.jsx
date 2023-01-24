@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { addTranslation } from "../api/translations";
 import { useUser } from "../context/UserContext";
 import { storageSave } from "../utils/storage";
+import { NavLink } from "react-router-dom";
 
 const Translation = () => {
 
@@ -15,9 +16,9 @@ const Translation = () => {
 
   const [message, setMessage] = useState("");
 
-  const onSubmit = async (data) => {
-    if (data.theMessage) {
-      let translation = data.theMessage
+  const onSubmit = async ({theMessage}) => {
+    if (theMessage) {
+      let translation = theMessage
       setMessage(translation);
       const [error, result] = await addTranslation(user, translation);
        
@@ -31,12 +32,15 @@ const Translation = () => {
     }
   };
   
+  
 
   return (
     <>
       <h1>Translation</h1>
 
-      <div className="EnterTrans">
+      <div><NavLink to="/Profile">Go to profile</NavLink></div>
+
+      <div className="aBox">
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
             className="EnterText"
@@ -44,7 +48,7 @@ const Translation = () => {
             type="text"
             {...register("theMessage")}
           />
-          <button type="submit">Enter</button>
+          <button type="submit" className="transBtn">Enter</button>
         </form>
       </div>
 

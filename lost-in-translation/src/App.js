@@ -19,11 +19,15 @@ const{user} = useUser()
 
   return (
     <BrowserRouter>
-    <div className="App">
+     <div className="App">
       <header className="App-header">
+        
       <Header/>
+
+
       {user !== null && < HeaderProfile username={user.username}/> }
       </header>
+     
 
       <Routes>
         <Route path="/" element={<StartUp/>}/>

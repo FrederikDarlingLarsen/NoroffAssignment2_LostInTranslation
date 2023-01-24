@@ -1,47 +1,37 @@
 .App {
   text-align: center;
   background-color: aquamarine;
-
   font-size: calc(3px + 2vmin);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h3{
+  margin: 0px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1{
+  display: inline;
 }
 
-.App-header {
+
+ .App-header {
   background-color: #282c34;
   min-height: 10vh;
-  display: flex;
-  /* flex-direction: column; */
-  align-items: center;
-  justify-content: center;
+ /* display: flex; */
+ 
+ text-align: center;
   font-size: calc(1px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+} 
 
 .profilePic {
-  align-items: right;
+ display: inline;
+ text-align: right;
+}
+
+.robotHead{
+  text-align: left;
+
+  display: inline;
 }
 
 .loginForm {
@@ -56,70 +46,55 @@
 .loginButton {
   width: calc(100px + 1vmin);
   padding: 12px 20px;
-  border-radius: 10px;
-  background-color: rgb(187, 192, 255);
+  border-radius: 30px;
+  background-color: mintcream;
 }
 
-.loginBox {
-  background-color: #61dafb;
-  margin-left: calc(150px + 1vmin);
-  margin-right: calc(150px + 1vmin);
-  padding: calc(20px + 1vmin);
-  border-radius: 50px;
-
-  margin-bottom: 20px;
-
+.profileButton {
+  width: calc(180px + 1vmin);
+  padding: 12px 20px;
+  border-radius: 30px;
+  background-color: mintcream;
+  margin: 10px;
 }
-
-.EnterTrans {
-  padding: calc(30px + 1vmin);
-  background-color: #61dafb;
-  margin-left: calc(200px + 1vmin);
-  margin-right: calc(200px + 1vmin);
-  border-radius: 50px;
-}
-
-
 
 .EnterText {
   padding: 20px;
   border-radius: 50px;
 }
 
-.ShowBox {
-  padding: calc(80px + 1vmin);
+.aBox {
+  padding: calc(10px + 1vmin);
   background-color: #61dafb;
-  margin-left: calc(200px + 1vmin);
-  margin-right: calc(200px + 1vmin);
+  margin-left: 30%;
+  margin-right: 30%;
   margin-top: calc(20px + 1vmin);
   border-radius: 30px;
 }
 
-
-.ProfileInfoBox{
-  padding: calc(10px + 1vmin);
-  background-color: #61dafb;
-  margin-left: calc(200px + 1vmin);
-  margin-right: calc(200px + 1vmin);
-  margin-top: calc(20px + 1vmin);
-  border-radius: 50px;
-}
-
-
-.ProfileHistoryBox{
-  padding: calc(80px + 1vmin);
-  background-color: #61dafb;
-  margin-left: calc(200px + 1vmin);
-  margin-right: calc(200px + 1vmin);
-  margin-top: calc(20px + 1vmin);
-  border-radius: 50px;
-}
-
 a{
-  color: white;
+  /* color: white; */
+  color: black;
+  font-weight: 500;
 }
-
 
 fieldset{
   border: none;
+}
+
+.transBtn{
+  background-color: aliceblue;
+  height: 40px;
+  border-radius: 30px;
+}
+
+
+.helloImg{
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+
+ul{
+  list-style: none;
 }

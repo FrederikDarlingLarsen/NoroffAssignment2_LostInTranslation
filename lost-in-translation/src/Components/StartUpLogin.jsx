@@ -65,20 +65,27 @@ const StartUpLogin = () => {
   })();
 
   return (
-    <div className="loginBox">
+    <div className="aBox">
       <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset>
           <label htmlFor="username"></label>
           <input
+          className="loginForm"
             type="text"
             placeholder="Type name here"
             {...register("username", usernameConfig)}
           />
-          {errorMessage}
-        </fieldset>
-        <button type="submit" disabled={loading}>
+          
+
+          <button className="loginButton" type="submit" disabled={loading}>
           Continue
         </button>
+
+        
+
+        </fieldset>
+        {errorMessage}
+        
         {loading && <p>Logging in...</p>}
         {apiError && <p>{apiError} </p>}
       </form>

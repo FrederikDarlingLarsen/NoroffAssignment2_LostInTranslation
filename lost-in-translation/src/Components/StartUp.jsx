@@ -9,7 +9,7 @@ const StartUp = () => {
 
         <StartUpLogin/>
         
-        <img src={logo} alt="hello" width="300px" />
+        <img className="helloImg" src={logo} alt="hello" width="300px" />
 
         
         </>
