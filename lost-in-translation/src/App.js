@@ -15,7 +15,6 @@ function App() {
 
 const{user} = useUser()
 
-let placeholder = "USERNAME"
 
 
   return (
@@ -23,9 +22,7 @@ let placeholder = "USERNAME"
     <div className="App">
       <header className="App-header">
       <Header/>
-      
-      <HeaderProfile username={placeholder}/> 
-
+      {user !== null && < HeaderProfile username={user.username}/> }
       </header>
 
       <Routes>

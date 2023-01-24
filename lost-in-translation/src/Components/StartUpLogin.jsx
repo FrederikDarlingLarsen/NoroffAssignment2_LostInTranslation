@@ -47,6 +47,7 @@ const StartUpLogin = () => {
     if (userResponse !== null) {
       storageSave("translate-user", userResponse);
       setUser(userResponse)
+ 
     }
     setLoading(false);
   };

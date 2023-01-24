@@ -5,10 +5,11 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { addTranslation } from "../api/translations";
 import { useUser } from "../context/UserContext";
+import { storageSave } from "../utils/storage";
 
 const Translation = () => {
 
-  const { user } = useUser();
+  const { user, setUser } = useUser();
 
   const { register, handleSubmit } = useForm();
 
@@ -19,6 +20,12 @@ const Translation = () => {
       let translation = data.theMessage
       setMessage(translation);
       const [error, result] = await addTranslation(user, translation);
+       
+      storageSave('translation-user', result)
+      setUser(result)
+      
+    
+    
     } else {
       alert("Please enter something");
     }

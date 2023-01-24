@@ -3,6 +3,8 @@ import ProfileInfo from "./ProfileInfo";
 import withAuth from "../higher-order-components/withAuth";
 import { useUser } from "../context/UserContext";
 import { storageSave } from "../utils/storage";
+import { useEffect } from "react";
+import { userById } from "../api/user";
 
 const Profile = () => {
   
@@ -11,9 +13,24 @@ const Profile = () => {
 
   const logout = () => {
       storageSave('translation-user', null)
-      setUser(null)
-     
+      setUser(null) 
   }
+
+
+  useEffect (() => {
+
+    const getUser = async () => {
+      const[error, latestuser] = await userById(user.id)
+      if(error === null){
+        storageSave('translation-user', latestuser)
+        setUser(latestuser)
+      }
+    }
+
+
+    getUser()
+
+  }, [setUser, user.id])
 
   return (
     <>

@@ -5,16 +5,22 @@
       let chars = []
   
       for(let i = 0; i < word.length; i++){
+        if(word[i].toLowerCase() !== word[i].toUpperCase()){
         chars.push(word[i])
+        }
       }
       
       let paths = []
       chars.map((char) => (
-      paths.push (`/individial_signs/${char}.png`)))
+      paths.push (`/individial_signs/${char}.png`)
+      
+      ))
   
       let elements = []
-      paths.map((path) => (
-        elements.push(<img src={path} alt="hey" width="64px" key={path}/>)))
+      
+      for(let i = 0; i < paths.length; i++){
+        elements.push(<img src={paths[i]} alt="hey" width="64px" key={i}/>)
+      }
   
         return elements
       }

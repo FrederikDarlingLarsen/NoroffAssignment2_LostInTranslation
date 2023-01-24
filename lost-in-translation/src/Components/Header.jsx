@@ -1,6 +1,7 @@
 import logo from '../Logo.png';
 const Header = () => {
 
+    // The JSX containg a logo and heading
     return (
     <>
     <img src={logo} alt="" width="64px" />
