@@ -1,7 +1,7 @@
 import { createHeaders } from ".";
 
 // Geting the apiUrl form the .env file.
-const apiUrl = process.env.REACT_APP_API_URL;
+const apiUrl = process.envi.REACT_APP_API_URL;
 
 // An async function for adding translations to the API.
 export const addTranslation = async (user, translation) => {

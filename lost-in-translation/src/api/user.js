@@ -1,7 +1,7 @@
 import {createHeaders} from "./index.js"
 
 // Getting the api url from the .env file.
-const apiUrl = process.env.REACT_APP_API_URL
+const apiUrl = process.envi.REACT_APP_API_URL
 
 // An async function checking for whether a user exists.
 const checkForUser = async (username) => {
@@ -52,22 +52,27 @@ const createUser = async (username) => {
 
 }
 
-// An async function for 
+// An async function for logging in the user.
 export const loginUser = async (username) => {
+    // the checkForUser function is first used to check whether the entered username exists.
     const [ checkError, user ] = await checkForUser(username)
 
+    // If the error is not nul...?
     if(checkError !== null){
         return [ checkError, null ]
     }
+
 
     if (user.length > 0){
         return [ null, user.pop()]
     }
 
+    // Create a new user with the createUser function.
     return await createUser(username)
 
 }
 
+// An async function 
 export const userById = async (userId) => {
     try {
         const response = await fetch(`${apiUrl}/${userId}`)
