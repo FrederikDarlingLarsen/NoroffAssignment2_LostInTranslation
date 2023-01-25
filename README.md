@@ -2,7 +2,7 @@
 
 This was the second assignment in the frontend course in JavaScript. With this assignment the focus was to implement an application using React. A large part of the assigment centered on how to communiate with a API using React.
 
-**The application is hosted at:** (LINK)
+**The application is hosted at:** https://lost-in-translation-one.vercel.app/
 
 ## The application
 
