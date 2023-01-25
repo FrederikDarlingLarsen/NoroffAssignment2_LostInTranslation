@@ -6,8 +6,9 @@
   
       
       for(let i = 0; i < word.length; i++){
-        if(word[i].toLowerCase() !== word[i].toUpperCase() &&
-           word[i].charCodeAt(0) >= 65 && word[i].charCodeAt(0) <= 122){
+        if((word[i].toLowerCase() !== word[i].toUpperCase() &&
+           word[i].charCodeAt(0) >= 65 && word[i].charCodeAt(0) <= 122 ) ||
+           word[i] === ' '){
         chars.push(word[i])
         }
       }

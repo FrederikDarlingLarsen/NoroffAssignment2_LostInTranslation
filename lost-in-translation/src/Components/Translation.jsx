@@ -10,16 +10,21 @@ import { NavLink } from "react-router-dom";
 
 const Translation = () => {
 
+  // Destructuring the user and setUser from useUser hook.
   const { user, setUser } = useUser();
 
+  // Getting register and handSubmit from the useForm hook.
   const { register, handleSubmit } = useForm();
 
+  // Creating a meesage and setting the local state of the message to "".
   const [message, setMessage] = useState("");
 
+  // Function that handles to submission of the message to the translator.
   const onSubmit = async ({theMessage}) => {
     if (theMessage) {
       let translation = theMessage
       setMessage(translation);
+      // Adding the translation to the API.
       const [error, result] = await addTranslation(user, translation);
        
       storageSave('translation-user', result)
@@ -28,6 +33,7 @@ const Translation = () => {
     
     
     } else {
+      // If nothing at all has been entered then alert the user.
       alert("Please enter something");
     }
   };
