@@ -9,7 +9,6 @@ import { storageSave } from "../utils/storage";
 import { NavLink } from "react-router-dom";
 
 const Translation = () => {
-
   // Destructuring the user and setUser from useUser hook.
   const { user, setUser } = useUser();
 
@@ -20,31 +19,28 @@ const Translation = () => {
   const [message, setMessage] = useState("");
 
   // Function that handles to submission of the message to the translator.
-  const onSubmit = async ({theMessage}) => {
+  const onSubmit = async ({ theMessage }) => {
     if (theMessage) {
-      let translation = theMessage
+      let translation = theMessage;
       setMessage(translation);
       // Adding the translation to the API.
       const [error, result] = await addTranslation(user, translation);
-       
-      storageSave('translation-user', result)
-      setUser(result)
-      
-    
-    
+
+      storageSave("translation-user", result);
+      setUser(result);
     } else {
       // If nothing at all has been entered then alert the user.
       alert("Please enter something");
     }
   };
-  
-  
 
   return (
     <>
       <h1>Translation</h1>
 
-      <div><NavLink to="/Profile">Go to profile</NavLink></div>
+      <div>
+        <NavLink to="/Profile">Go to profile</NavLink>
+      </div>
 
       <div className="aBox">
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -53,8 +49,11 @@ const Translation = () => {
             placeholder="Enter your text here"
             type="text"
             {...register("theMessage")}
+            
           />
-          <button type="submit" className="transBtn">Enter</button>
+          <button type="submit" className="transBtn">
+            Enter
+          </button>
         </form>
       </div>
 

@@ -12,7 +12,6 @@ const usernameConfig = {
 };
 
 const StartUpLogin = () => {
-
   // The hooks for the form.
   const {
     register,
@@ -21,26 +20,24 @@ const StartUpLogin = () => {
   } = useForm();
 
   // Destructuring user and setUser() from useUser.
-  const {user, setUser} = useUser()
+  const { user, setUser } = useUser();
 
   // Getting the navigate() function fron useNavigate.
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   // The local states.
   const [loading, setLoading] = useState(false);
   const [apiError, setApiError] = useState(null);
 
- // The side effects.
+  // The side effects.
   useEffect(() => {
     // If there is a user, navigate to profile.
-    if(user !== null){
-      navigate('Profile')
+    if (user !== null) {
+      navigate("Profile");
     }
-  }, [user, navigate])
+  }, [user, navigate]);
 
-
-
- // Handling the submission of the form.
+  // Handling the submission of the form.
   const onSubmit = async ({ username }) => {
     setLoading(true);
     const [error, userResponse] = await loginUser(username);
@@ -49,8 +46,7 @@ const StartUpLogin = () => {
     }
     if (userResponse !== null) {
       storageSave("translate-user", userResponse);
-      setUser(userResponse)
- 
+      setUser(userResponse);
     }
     setLoading(false);
   };
@@ -73,22 +69,18 @@ const StartUpLogin = () => {
         <fieldset>
           <label htmlFor="username"></label>
           <input
-          className="loginForm"
+            className="loginForm"
             type="text"
             placeholder="Type name here"
             {...register("username", usernameConfig)}
           />
-          
 
           <button className="loginButton" type="submit" disabled={loading}>
-          Continue
-        </button>
-
-        
-
+            Continue
+          </button>
         </fieldset>
         {errorMessage}
-        
+
         {loading && <p>Logging in...</p>}
         {apiError && <p>{apiError} </p>}
       </form>

@@ -1,41 +1,33 @@
 .App {
   text-align: center;
   background-color: aquamarine;
-  font-size: calc(3px + 2vmin);
+  font-size: calc(2px + 2vmin);
 }
 
-h3{
+h3 {
   margin: 0px;
 }
 
-h1{
-  display: inline;
-  line-height: 1.6;
+h1 {
+  display: inline-block;
 }
 
-
- .App-header {
+.App-header {
   background-color: #282c34;
- 
-
-  font-size: calc(1px + 2vmin);
+  font-size: calc(1px + 1vmin);
   color: white;
-
   padding: 15px;
   height: 80px;
-} 
-
-.profilePic {
-
-float: right;
- margin-right: 30%; 
 }
 
-.robotHead{
-  
+.profilePic {
+  float: right;
+  margin-right: 30%;
+}
 
+.robotHead {
   float: left;
-  margin-left: 30%; 
+  margin-left: 30%;
 }
 
 .loginForm {
@@ -76,29 +68,37 @@ float: right;
   border-radius: 30px;
 }
 
-a{
-  /* color: white; */
+a {
   color: black;
   font-weight: 500;
 }
 
-fieldset{
+fieldset {
   border: none;
 }
 
-.transBtn{
-  background-color: aliceblue;
+.transBtn {
+  background-color: white;
   height: 40px;
-  border-radius: 30px;
+  width: 70px;
+  margin-left: 10px;
+  border-radius: 10px;
+ 
 }
 
-
-.helloImg{
+.helloImg {
   padding-top: 60px;
   padding-bottom: 60px;
 }
 
-
-ul{
+ul {
   list-style: none;
+}
+
+button:hover {background-color: aliceblue}
+
+button:active {
+  background-color: lightblue;
+  box-shadow: 0 1px black;
+  transform: translateY(3px);
 }
