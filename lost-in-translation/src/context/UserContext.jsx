@@ -1,18 +1,21 @@
 import { useContext, createContext, useState } from "react"
 import { storageRead } from "../utils/storage"
 
-// context object (exposing state)
+// Creating a new context.
 const UserContext = createContext()
 
+// Creating a custom hook called useUser.
 export const useUser = () => {
     return useContext(UserContext)
 }
 
-// provider => the state (manageing)
+// The provder for the user is declared.
 const UserProvider = ({children}) => {
 
+    // User and setUser are declared, and the user is read from session storage.
     const [user, setUser] = useState(storageRead('translate-user'))
 
+    // state object is created.
     const state = {
         user,
         setUser

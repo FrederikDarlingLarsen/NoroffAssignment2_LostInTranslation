@@ -28,12 +28,13 @@ h1{
 .profilePic {
 
 float: right;
- margin-right: 30%; 
+ margin-right: 30%;
+ height: 80px;
 }
 
 .robotHead{
   
-
+  height: 80px;
   float: left;
   margin-left: 30%; 
 }

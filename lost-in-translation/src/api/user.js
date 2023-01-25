@@ -1,7 +1,9 @@
 import {createHeaders} from "./index.js"
 
+// Getting the api url from the .env file.
 const apiUrl = process.env.REACT_APP_API_URL
 
+//
 const checkForUser = async (username) => {
     try {
         const response = await fetch(`${apiUrl}?username=${username}`)
