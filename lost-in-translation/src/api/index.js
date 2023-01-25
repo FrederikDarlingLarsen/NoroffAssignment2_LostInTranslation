@@ -1,4 +1,4 @@
-const apiKey = process.envi.REACT_APP_API_KEY
+const apiKey = process.env.REACT_APP_API_KEY
 //What is this???????????
 export const createHeaders = () => {
     return {

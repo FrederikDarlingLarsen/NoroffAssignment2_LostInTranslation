@@ -1,7 +1,7 @@
 import {createHeaders} from "./index.js"
 
 // Getting the api url from the .env file.
-const apiUrl = process.envi.REACT_APP_API_URL
+const apiUrl = process.env.REACT_APP_API_URL
 
 // An async function checking for whether a user exists.
 const checkForUser = async (username) => {
