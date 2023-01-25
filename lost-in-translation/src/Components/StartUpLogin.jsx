@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { loginUser } from "../api/user";
-import { storageSave } from "../utils/storage";
+import { storageRead, storageSave } from "../utils/storage";
 
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../context/UserContext";
 
-// This config object defines the parameters that must be true in order to create a username.
 const usernameConfig = {
   required: true,
   minLength: 5,
@@ -14,32 +13,31 @@ const usernameConfig = {
 
 const StartUpLogin = () => {
 
-  // The hooks for the form
+  //hooks
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  // Destructuring user and setUser() from useUser.
   const {user, setUser} = useUser()
 
-  // Getting the navigate() function fron useNavigate.
   const navigate = useNavigate()
 
-  // The local states.
+  //local state
   const [loading, setLoading] = useState(false);
   const [apiError, setApiError] = useState(null);
 
- // The side effects.
+ // side effect
   useEffect(() => {
-    // If there is a user, navigate to profile.
     if(user !== null){
       navigate('Profile')
     }
   }, [user, navigate])
 
- // Handling the submission of the form.
+
+
+ //event handlers
   const onSubmit = async ({ username }) => {
     setLoading(true);
     const [error, userResponse] = await loginUser(username);
@@ -49,9 +47,11 @@ const StartUpLogin = () => {
     if (userResponse !== null) {
       storageSave("translate-user", userResponse);
       setUser(userResponse)
+ 
     }
     setLoading(false);
   };
+
   const errorMessage = (() => {
     if (!errors.username) {
       return null;
@@ -75,11 +75,17 @@ const StartUpLogin = () => {
             placeholder="Type name here"
             {...register("username", usernameConfig)}
           />
+          
+
           <button className="loginButton" type="submit" disabled={loading}>
           Continue
         </button>
+
+        
+
         </fieldset>
         {errorMessage}
+        
         {loading && <p>Logging in...</p>}
         {apiError && <p>{apiError} </p>}
       </form>

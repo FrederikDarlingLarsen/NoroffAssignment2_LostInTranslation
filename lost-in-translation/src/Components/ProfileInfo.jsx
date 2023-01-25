@@ -1,3 +1,6 @@
+
+
+import { clearHist } from "../api/translations";
 import { useUser } from "../context/UserContext";
 import { storageSave } from "../utils/storage";
 
@@ -26,13 +29,12 @@ const ProfileInfo = (props) => {
     //     return
     // }
 
-    // Setting to updated user to a user with 0 translations.
+    // 
     const updatedUser = {
         ...user,
         translations: []
     }
 
-    // Saving the updated user to session storage and setting the user.
     storageSave(updatedUser)
     setUser(updatedUser)
     
