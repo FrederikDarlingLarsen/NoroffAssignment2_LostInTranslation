@@ -3,13 +3,16 @@ import {createHeaders} from "./index.js"
 // Getting the api url from the .env file.
 const apiUrl = process.env.REACT_APP_API_URL
 
-//
+// An async function checking for whether a user exists.
 const checkForUser = async (username) => {
     try {
+        // Awaiting a response from a fetch request attempting to fetch a specified user.
         const response = await fetch(`${apiUrl}?username=${username}`)
+        // If the response is not ok then throw an error.
         if(!response.ok){
             throw new Error('Could not complete request.')
         }
+        //?
         const data = await response.json()
         return [ null, data ]
     }
@@ -20,19 +23,25 @@ const checkForUser = async (username) => {
 
 }
 
+// An async function for creating a user.
 const createUser = async (username) => {
     try {
+        // Awaiting a response from the API.
         const response = await fetch(apiUrl, {
+            // Using POST since we want to add a new user object to the API
             method: 'POST',
             headers: createHeaders(),
+            // Adding an object with a the username and an empty array to contain the translations.
             body: JSON.stringify({
                 username,
                 translations: []
             })
         })
+        // If the response is not ok then throw an error.
         if(!response.ok){
             throw new Error(`Could not create user with username ${username}`)
         }
+        //?
         const data = await response.json()
         return [ null, data ]
     }
@@ -43,7 +52,7 @@ const createUser = async (username) => {
 
 }
 
-
+// An async function for 
 export const loginUser = async (username) => {
     const [ checkError, user ] = await checkForUser(username)
 
@@ -59,10 +68,10 @@ export const loginUser = async (username) => {
 
 }
 
-
 export const userById = async (userId) => {
     try {
         const response = await fetch(`${apiUrl}/${userId}`)
+        // If the response is not ok then throw an error.
         if(!response.ok){
             throw new Error ('not user fetched')
         }
@@ -73,7 +82,3 @@ export const userById = async (userId) => {
         return [error.message, null]
     }
 }
-
-
-
-
