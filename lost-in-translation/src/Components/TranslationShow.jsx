@@ -33,6 +33,8 @@ const renderWords = (aWord) => {
 };
 
 const TranslationShow = (props) => {
+
+  // Create a variable to call the renderWords function on and call the function.
   let theText = renderWords(props.msg);
 
   return <div className="aBox">{theText}</div>;

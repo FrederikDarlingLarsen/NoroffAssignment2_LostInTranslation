@@ -19,7 +19,7 @@ const UserProvider = ({ children }) => {
     user,
     setUser,
   };
-
+  // Returning the provider element for the user context.
   return <UserContext.Provider value={state}>{children}</UserContext.Provider>;
 };
 

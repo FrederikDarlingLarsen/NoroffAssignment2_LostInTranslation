@@ -39,15 +39,18 @@ const StartUpLogin = () => {
 
   // Handling the submission of the form.
   const onSubmit = async ({ username }) => {
+    // Set loading to true.
     setLoading(true);
     const [error, userResponse] = await loginUser(username);
     if (error !== null) {
       setApiError(error);
     }
+    // If the response is not null store the user in session storage and set the user.
     if (userResponse !== null) {
       storageSave("translate-user", userResponse);
       setUser(userResponse);
     }
+    // Set the loading to false.
     setLoading(false);
   };
 
@@ -55,11 +58,14 @@ const StartUpLogin = () => {
     if (!errors.username) {
       return null;
     }
+    // If the error is of type "required" then return a span element telling the user that a username is required.
     if (errors.username.type === "required") {
-      return <span>Required</span>;
+      return <span>A username is required.</span>;
     }
+    // If the error is of type "minLength" return a span element telling the user that their
+    // username is too short and how long it must be.
     if (errors.username.type === "minLength") {
-      return <span>Too short. must be 5 chars</span>;
+      return <span>Username is too short. must be atleast 5 characters.</span>;
     }
   })();
 
@@ -74,7 +80,6 @@ const StartUpLogin = () => {
             placeholder="Type name here"
             {...register("username", usernameConfig)}
           />
-
           <button className="loginButton" type="submit" disabled={loading}>
             Continue
           </button>
