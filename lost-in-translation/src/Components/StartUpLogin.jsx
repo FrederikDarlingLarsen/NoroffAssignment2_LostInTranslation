@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { loginUser } from "../api/user";
-import { storageRead, storageSave } from "../utils/storage";
-
+import { storageSave } from "../utils/storage";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../context/UserContext";
 
+// This config object defines the parameters that must be true in order to create a username.
 const usernameConfig = {
   required: true,
   minLength: 5,
@@ -13,23 +13,26 @@ const usernameConfig = {
 
 const StartUpLogin = () => {
 
-  //hooks
+  // The hooks for the form.
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
+  // Destructuring user and setUser() from useUser.
   const {user, setUser} = useUser()
 
+  // Getting the navigate() function fron useNavigate.
   const navigate = useNavigate()
 
-  //local state
+  // The local states.
   const [loading, setLoading] = useState(false);
   const [apiError, setApiError] = useState(null);
 
- // side effect
+ // The side effects.
   useEffect(() => {
+    // If there is a user, navigate to profile.
     if(user !== null){
       navigate('Profile')
     }
@@ -37,7 +40,7 @@ const StartUpLogin = () => {
 
 
 
- //event handlers
+ // Handling the submission of the form.
   const onSubmit = async ({ username }) => {
     setLoading(true);
     const [error, userResponse] = await loginUser(username);
