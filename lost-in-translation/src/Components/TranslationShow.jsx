@@ -4,8 +4,10 @@
       let word = aWord
       let chars = []
   
+      
       for(let i = 0; i < word.length; i++){
-        if(word[i].toLowerCase() !== word[i].toUpperCase()){
+        if(word[i].toLowerCase() !== word[i].toUpperCase() &&
+           word[i].charCodeAt(0) >= 65 && word[i].charCodeAt(0) <= 122){
         chars.push(word[i])
         }
       }

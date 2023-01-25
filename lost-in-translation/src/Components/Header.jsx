@@ -4,7 +4,9 @@ const Header = () => {
     // The JSX containg a logo and heading
     return (
     <>
-    <img className="robotHead" src={logo} alt="" width="64px" />
+    <img className="robotHead" src={logo} alt="" width="80px" />
+
+
     <h1>Lost in Translation</h1>
     </>
     )
