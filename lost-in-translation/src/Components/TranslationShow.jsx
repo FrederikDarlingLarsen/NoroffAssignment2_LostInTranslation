@@ -1,5 +1,4 @@
-const renderWords = (aWord) => {
-  let word = aWord;
+const renderWords = (word) => {
 
   // Declaring an emty array to contain the characters.
   let chars = [];
@@ -20,7 +19,7 @@ const renderWords = (aWord) => {
   // The paths for the images are then mapped from
   // the chars array into a new array called paths.
   let paths = [];
-  chars.map((char) => paths.push(`/individial_signs/${char}.png`));
+  chars.map((char) => paths.push(`/img/individial_signs/${char}.png`));
   // The paths are then looped over in a for loop where the JSX elemnts are created
   // and added to a new array called elements.
   let elements = [];

@@ -5,12 +5,13 @@ const ProfileHistory = ({ translations }) => {
   const translationsList = [];
   const numOfItems = 10;
   for (let i = 0; i < numOfItems; i++) {
+    if(translations[i] !== undefined){
     translationsList.push(
       <ProfileHistoryItem
         key={i + "-" + translations[i]}
         translation={translations[i]}
-      />
-    );
+      />);
+    } 
   }
 
   return (

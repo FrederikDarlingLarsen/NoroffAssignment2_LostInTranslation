@@ -5,7 +5,7 @@ import { useUser } from "../context/UserContext";
 import { storageSave } from "../utils/storage";
 import { useEffect } from "react";
 import { userById } from "../api/user";
-import { NavLink } from "react-router-dom";
+
 
 const Profile = () => {
   // Destructuring user and setUser
@@ -36,9 +36,9 @@ const Profile = () => {
   return (
     <>
       <h1>Profile</h1>
-      <div>
-        <NavLink to="/Translation">Go to translation</NavLink>
-      </div>
+   
+        
+    
 
       <ProfileInfo logout={logout} username={user.username} />
 

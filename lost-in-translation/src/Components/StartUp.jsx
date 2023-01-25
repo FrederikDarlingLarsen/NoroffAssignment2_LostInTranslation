@@ -1,5 +1,5 @@
 import StartUpLogin from "./StartUpLogin";
-import logo from "../Logo-Hello.png";
+
 
 const StartUp = () => {
   return (
@@ -7,9 +7,11 @@ const StartUp = () => {
       {/* <h2>This is the startup page</h2> */}
       <br />
 
-      <StartUpLogin />
+      
 
-      <img className="helloImg" src={logo} alt="hello" width="300px" />
+      <img className="helloImg" src="/img/Logo-Hello.png" alt="hello" width="400px" />
+
+      <StartUpLogin />
     </>
   );
 };

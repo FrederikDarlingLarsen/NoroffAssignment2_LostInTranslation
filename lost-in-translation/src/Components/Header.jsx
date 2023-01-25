@@ -1,9 +1,17 @@
-import logo from "../Logo.png";
+import { useUser } from "../context/UserContext";
+
+
+
+
 const Header = () => {
+
+ const {user} = useUser()
+
+
   // The JSX containg a logo and heading
   return (
     <>
-      {/* <img className="robotHead" src={logo} alt="" width="80px" /> */}
+       {user !== null && <img className="robotHead" src="/img/Logo.png" alt="" width="90px" /> }
 
       <h1>Lost in Translation</h1>
     </>

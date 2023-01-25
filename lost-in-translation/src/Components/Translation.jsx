@@ -21,10 +21,10 @@ const Translation = () => {
   // Function that handles to submission of the message to the translator.
   const onSubmit = async ({ theMessage }) => {
     if (theMessage) {
-      let translation = theMessage;
-      setMessage(translation);
+      
+      setMessage(theMessage);
       // Adding the translation to the API.
-      const [error, result] = await addTranslation(user, translation);
+      const [error, result] = await addTranslation(user, theMessage);
 
       storageSave("translation-user", result);
       setUser(result);
@@ -37,10 +37,10 @@ const Translation = () => {
   return (
     <>
       <h1>Translation</h1>
-
+{/* 
       <div>
         <NavLink to="/Profile">Go to profile</NavLink>
-      </div>
+      </div> */}
 
       <div className="aBox">
         <form onSubmit={handleSubmit(onSubmit)}>

@@ -65,12 +65,15 @@ const StartUpLogin = () => {
     // If the error is of type "minLength" return a span element telling the user that their
     // username is too short and how long it must be.
     if (errors.username.type === "minLength") {
-      return <span>Username is too short. must be atleast 5 characters.</span>;
+      return <span>Username is too short. must be at least 5 characters.</span>;
     }
   })();
 
   return (
     <div className="aBox">
+
+      <h2>Please login</h2>
+
       <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset>
           <label htmlFor="username"></label>

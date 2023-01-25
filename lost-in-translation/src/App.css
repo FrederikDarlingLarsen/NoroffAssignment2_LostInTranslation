@@ -2,14 +2,23 @@
   text-align: center;
   background-color: aquamarine;
   font-size: calc(2px + 2vmin);
+
+  height:calc(1000px + 20vmin);
 }
+
+
 
 h3 {
   margin: 0px;
 }
 
+h2{
+  margin: 10px;
+}
+
 h1 {
   display: inline-block;
+  font-size: 32px;
 }
 
 .App-header {
@@ -17,23 +26,24 @@ h1 {
   font-size: calc(1px + 1vmin);
   color: white;
   padding: 15px;
-  height: 80px;
+  height: 90px;
 }
 
 .profilePic {
   float: right;
-  margin-right: 30%;
+  margin-right: 25%;
+
 }
 
 .robotHead {
   float: left;
-  margin-left: 30%;
+  margin-left: 25%;
 }
 
 .loginForm {
   margin: 10px;
   width: calc(200px + 1vmin);
-  border: 30px gray;
+
   border-radius: 30px;
   background-color: white;
   padding: 12px 20px;
@@ -55,22 +65,29 @@ h1 {
 }
 
 .EnterText {
-  padding: 20px;
+  padding: 12px;
+  width: 40%;
   border-radius: 50px;
 }
 
 .aBox {
   padding: calc(10px + 1vmin);
   background-color: #61dafb;
-  margin-left: 30%;
-  margin-right: 30%;
-  margin-top: calc(20px + 1vmin);
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: calc(10px + 1vmin);
   border-radius: 30px;
 }
 
 a {
-  color: black;
+  color: white;
+  font-size: 20px;
   font-weight: 500;
+  text-decoration: none;
+}
+
+p{
+  margin: 0px;
 }
 
 fieldset {
@@ -78,7 +95,7 @@ fieldset {
 }
 
 .transBtn {
-  background-color: white;
+  background-color: mintcream;
   height: 40px;
   width: 70px;
   margin-left: 10px;
@@ -93,7 +110,21 @@ fieldset {
 
 ul {
   list-style: none;
+  padding-left: 0;
+  margin-left: 10%;
+  margin-right: 10%;
+  
+
 }
+
+li{
+  padding: 8px;
+  background-color: lightskyblue;
+  border-radius: 20px;
+  
+}
+
+li:nth-child(even){background-color: aliceblue}
 
 button:hover {background-color: aliceblue}
 

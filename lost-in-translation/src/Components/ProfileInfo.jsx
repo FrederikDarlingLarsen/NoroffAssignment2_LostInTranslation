@@ -1,5 +1,6 @@
 import { useUser } from "../context/UserContext";
 import { storageSave } from "../utils/storage";
+import { NavLink } from "react-router-dom";
 
 const ProfileInfo = (props) => {
   // Destructuring the user and the setUser() method.
@@ -41,6 +42,16 @@ const ProfileInfo = (props) => {
         alt="profilepic"
       />
       <h3>Name: {props.username}</h3>
+
+      <NavLink to="/Translation">
+      <button className="profileButton">
+      Go to translation
+      </button>
+      </NavLink>
+
+
+
+
 
       <button className="profileButton" onClick={handleClearHist}>
         clear history
