@@ -12,7 +12,6 @@ const checkForUser = async (username) => {
     if (!response.ok) {
       throw new Error("Could not complete request.");
     }
-    //?
     const data = await response.json();
     return [null, data];
   } catch (error) {
@@ -25,7 +24,7 @@ const createUser = async (username) => {
   try {
     // Awaiting a response from the API.
     const response = await fetch(apiUrl, {
-      // Using POST since we want to add a new user object to the API
+      // Using POST since we want to add a new user object to the API.
       method: "POST",
       headers: createHeaders(),
       // Adding an object with a the username and an empty array to contain the translations.
@@ -38,7 +37,6 @@ const createUser = async (username) => {
     if (!response.ok) {
       throw new Error(`Could not create user with username ${username}`);
     }
-    //?
     const data = await response.json();
     return [null, data];
   } catch (error) {
@@ -51,7 +49,6 @@ export const loginUser = async (username) => {
   // the checkForUser function is first used to check whether the entered username exists.
   const [checkError, user] = await checkForUser(username);
 
-  // If the error is not nul...?
   if (checkError !== null) {
     return [checkError, null];
   }
@@ -64,7 +61,7 @@ export const loginUser = async (username) => {
   return await createUser(username);
 };
 
-// An async function
+// An async function to retrieve a specifc user by their id.
 export const userById = async (userId) => {
   try {
     const response = await fetch(`${apiUrl}/${userId}`);

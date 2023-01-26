@@ -1,6 +1,7 @@
 import { useUser } from "../context/UserContext";
 import { storageSave } from "../utils/storage";
 import { NavLink } from "react-router-dom";
+import { clearHist } from "../api/translations";
 
 const ProfileInfo = (props) => {
   // Destructuring the user and the setUser() method.
@@ -18,14 +19,10 @@ const ProfileInfo = (props) => {
     if (!window.confirm("you sure?")) {
       return;
     }
-
-    //const [err] = await clearHist(user.id)
-
-    // if(err !== null){
-    //     return
-    // }
-
-    //
+    const [err] = await clearHist(user.id)
+    if(err !== null){
+         return
+    }
     const updatedUser = {
       ...user,
       translations: [],
@@ -46,7 +43,6 @@ const ProfileInfo = (props) => {
       <NavLink to="/Translation">
         <button className="profileButton">Go to translation</button>
       </NavLink>
-
       <button className="profileButton" onClick={handleClearHist}>
         clear history
       </button>

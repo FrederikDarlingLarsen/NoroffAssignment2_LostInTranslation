@@ -22,7 +22,7 @@ const StartUpLogin = () => {
   // Destructuring user and setUser() from useUser.
   const { user, setUser } = useUser();
 
-  // Getting the navigate() function fron useNavigate.
+  // Getting the navigate() function from useNavigate.
   const navigate = useNavigate();
 
   // The local states.
@@ -31,9 +31,9 @@ const StartUpLogin = () => {
 
   // The side effects.
   useEffect(() => {
-    // If there is a user, navigate to profile.
+    // If there is a user, navigate to the translation page.
     if (user !== null) {
-      navigate("Profile");
+      navigate("Translation");
     }
   }, [user, navigate]);
 
@@ -54,10 +54,12 @@ const StartUpLogin = () => {
     setLoading(false);
   };
 
+  // Return null if there are no errors.
   const errorMessage = (() => {
     if (!errors.username) {
       return null;
     }
+
     // If the error is of type "required" then return a span element telling the user that a username is required.
     if (errors.username.type === "required") {
       return <span>A username is required.</span>;
@@ -65,7 +67,7 @@ const StartUpLogin = () => {
     // If the error is of type "minLength" return a span element telling the user that their
     // username is too short and how long it must be.
     if (errors.username.type === "minLength") {
-      return <span>Username is too short. must be at least 5 characters.</span>;
+      return <span>Username is too short. Must be at least 5 characters.</span>;
     }
   })();
 
@@ -73,6 +75,7 @@ const StartUpLogin = () => {
     <div className="aBox">
       <h2>Please login</h2>
 
+       {/* Run onSubmit when submitting the form */}
       <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset>
           <label htmlFor="username"></label>
@@ -80,6 +83,7 @@ const StartUpLogin = () => {
             className="loginForm"
             type="text"
             placeholder="Type name here"
+            // Using the register function to listen for user input.
             {...register("username", usernameConfig)}
           />
           <button className="loginButton" type="submit" disabled={loading}>

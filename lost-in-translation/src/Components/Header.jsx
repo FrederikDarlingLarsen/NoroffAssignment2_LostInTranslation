@@ -9,7 +9,6 @@ const Header = () => {
       {user !== null && (
         <img className="robotHead" src="/img/Logo.png" alt="" width="90px" />
       )}
-
       <h1>Lost in Translation</h1>
     </>
   );

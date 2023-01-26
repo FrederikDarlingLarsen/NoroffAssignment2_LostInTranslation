@@ -17,6 +17,7 @@ const ProfileHistory = ({ translations }) => {
   return (
     <div className="aBox">
       <h2>History</h2>
+      {/* Display the list of translations. */}
       <ul>{translationsList}</ul>
     </div>
   );

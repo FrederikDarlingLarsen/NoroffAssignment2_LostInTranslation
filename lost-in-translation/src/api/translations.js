@@ -1,6 +1,6 @@
 import { createHeaders } from ".";
 
-// Geting the apiUrl form the .env file.
+// Geting the api url from the .env file.
 const apiUrl = process.env.REACT_APP_API_URL;
 
 // An async function for adding translations to the API.
@@ -8,7 +8,7 @@ export const addTranslation = async (user, translation) => {
   try {
     // Awaiting a response from a fetch request.
     const response = await fetch(`${apiUrl}/${user.id}`, {
-      // Using PATCH since an object has to updated.
+      // Using PATCH since an object has to be updated.
       method: "PATCH",
       headers: createHeaders(),
       body: JSON.stringify({
@@ -19,7 +19,6 @@ export const addTranslation = async (user, translation) => {
     if (!response.ok) {
       throw new Error(`Could not update translations`);
     }
-
     const result = await response.json();
     return [null, result];
   } catch (error) {
@@ -31,7 +30,7 @@ export const clearHist = async (userId) => {
   try {
     // Awaiting a response from a fetch request.
     const response = await fetch(`${apiUrl}/${userId}`, {
-      // Using PATCH since an obejct has to updated.
+      // Using PATCH since an object has to be updated.
       method: "PATCH",
       headers: createHeaders(),
       body: JSON.stringify({

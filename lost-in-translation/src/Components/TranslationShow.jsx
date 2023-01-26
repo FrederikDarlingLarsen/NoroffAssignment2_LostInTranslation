@@ -3,7 +3,7 @@ const renderWords = (word) => {
   let chars = [];
 
   // Looping through all of the characters, and checking whether they are valid.
-  // If the charters are either the letters from a-z or space then add them to the array.
+  // If the characters are either the letters from a-z or space then add them to the array.
   for (let i = 0; i < word.length; i++) {
     if (
       (word[i].toLowerCase() !== word[i].toUpperCase() &&
@@ -19,7 +19,7 @@ const renderWords = (word) => {
   // the chars array into a new array called paths.
   let paths = [];
   chars.map((char) => paths.push(`/img/individial_signs/${char}.png`));
-  // The paths are then looped over in a for loop where the JSX elemnts are created
+  // The paths are then looped over in a for loop where the JSX elements are created
   // and added to a new array called elements.
   let elements = [];
 

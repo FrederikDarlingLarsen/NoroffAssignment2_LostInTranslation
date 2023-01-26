@@ -14,7 +14,7 @@ const UserProvider = ({ children }) => {
   // User and setUser are declared, and the user is read from session storage.
   const [user, setUser] = useState(storageRead("translate-user"));
 
-  // state object is created.
+  // State object is created.
   const state = {
     user,
     setUser,
