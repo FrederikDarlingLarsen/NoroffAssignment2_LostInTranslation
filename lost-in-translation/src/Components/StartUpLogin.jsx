@@ -71,7 +71,6 @@ const StartUpLogin = () => {
 
   return (
     <div className="aBox">
-
       <h2>Please login</h2>
 
       <form onSubmit={handleSubmit(onSubmit)}>

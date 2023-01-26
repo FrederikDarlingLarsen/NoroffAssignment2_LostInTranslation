@@ -1,15 +1,14 @@
 const renderWords = (word) => {
-
-  // Declaring an emty array to contain the characters.
+  // Declaring an empty array to contain the characters.
   let chars = [];
 
   // Looping through all of the characters, and checking whether they are valid.
-  // If the charters are etiher the letters from a-z or space then add them to the array.
+  // If the charters are either the letters from a-z or space then add them to the array.
   for (let i = 0; i < word.length; i++) {
     if (
       (word[i].toLowerCase() !== word[i].toUpperCase() &&
-        word[i].charCodeAt(0) >= 65 &&
-        word[i].charCodeAt(0) <= 122) ||
+        ((word[i].charCodeAt(0) >= 65 && word[i].charCodeAt(0) <= 90) ||
+          (word[i].charCodeAt(0) >= 97 && word[i].charCodeAt(0) <= 122))) ||
       word[i] === " "
     ) {
       chars.push(word[i]);
@@ -32,7 +31,6 @@ const renderWords = (word) => {
 };
 
 const TranslationShow = (props) => {
-
   // Create a variable to call the renderWords function on and call the function.
   let theText = renderWords(props.msg);
 

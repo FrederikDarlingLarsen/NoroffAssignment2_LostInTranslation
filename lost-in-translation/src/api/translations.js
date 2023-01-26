@@ -8,7 +8,7 @@ export const addTranslation = async (user, translation) => {
   try {
     // Awaiting a response from a fetch request.
     const response = await fetch(`${apiUrl}/${user.id}`, {
-      // Using PATCH since an obejct has to updated.
+      // Using PATCH since an object has to updated.
       method: "PATCH",
       headers: createHeaders(),
       body: JSON.stringify({

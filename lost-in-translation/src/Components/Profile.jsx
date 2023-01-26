@@ -6,7 +6,6 @@ import { storageSave } from "../utils/storage";
 import { useEffect } from "react";
 import { userById } from "../api/user";
 
-
 const Profile = () => {
   // Destructuring user and setUser
   const { user, setUser } = useUser();
@@ -36,9 +35,6 @@ const Profile = () => {
   return (
     <>
       <h1>Profile</h1>
-   
-        
-    
 
       <ProfileInfo logout={logout} username={user.username} />
 

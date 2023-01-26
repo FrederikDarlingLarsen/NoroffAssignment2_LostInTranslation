@@ -13,18 +13,17 @@ const Translation = () => {
   const { user, setUser } = useUser();
 
   // Getting register and handSubmit from the useForm hook.
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   // Creating a meesage and setting the local state of the message to "".
   const [message, setMessage] = useState("");
 
   // Function that handles to submission of the message to the translator.
-  const onSubmit = async ({ theMessage }) => {
-    if (theMessage) {
-      
-      setMessage(theMessage);
+  const onSubmit = async (data) => {
+    if (data.theMessage) {
+      setMessage(data.theMessage);
       // Adding the translation to the API.
-      const [error, result] = await addTranslation(user, theMessage);
+      const [error, result] = await addTranslation(user, data.theMessage);
 
       storageSave("translation-user", result);
       setUser(result);
@@ -32,12 +31,15 @@ const Translation = () => {
       // If nothing at all has been entered then alert the user.
       alert("Please enter something");
     }
+    reset({
+      theMessage: "",
+    });
   };
 
   return (
     <>
       <h1>Translation</h1>
-{/* 
+      {/* 
       <div>
         <NavLink to="/Profile">Go to profile</NavLink>
       </div> */}
@@ -49,7 +51,6 @@ const Translation = () => {
             placeholder="Enter your text here"
             type="text"
             {...register("theMessage")}
-            
           />
           <button type="submit" className="transBtn">
             Enter

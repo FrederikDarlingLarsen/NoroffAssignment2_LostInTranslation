@@ -4,7 +4,7 @@ const HeaderProfile = ({ username }) => {
   return (
     <div className="profilePic">
       {/* Linking to the profile */}
-      <NavLink to="/Profile">
+      <NavLink to="/Profile"  >
         {/* <p>
              {username}
              </p> */}

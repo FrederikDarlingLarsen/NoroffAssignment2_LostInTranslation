@@ -9,7 +9,7 @@
 
 
 h3 {
-  margin: 0px;
+  margin: 10px;
 }
 
 h2{
@@ -32,8 +32,10 @@ h1 {
 .profilePic {
   float: right;
   margin-right: 25%;
-
 }
+
+
+
 
 .robotHead {
   float: left;
@@ -86,6 +88,14 @@ a {
   text-decoration: none;
 }
 
+a:hover{
+  color: lightgray;
+}
+
+a:active{
+  color: gray;
+}
+
 p{
   margin: 0px;
 }
@@ -118,6 +128,7 @@ ul {
 }
 
 li{
+  margin: 3px;
   padding: 8px;
   background-color: lightskyblue;
   border-radius: 20px;
