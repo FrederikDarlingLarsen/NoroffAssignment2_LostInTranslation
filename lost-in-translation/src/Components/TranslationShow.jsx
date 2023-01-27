@@ -2,19 +2,10 @@ const renderWords = (word) => {
   // Declaring an empty array to contain the characters.
   let chars = [];
 
-  // Looping through all of the characters, and checking whether they are valid.
-  // If the characters are either the letters from a-z or space then add them to the array.
+  // Looping through all of the characters and then add them to the array.
   for (let i = 0; i < word.length; i++) {
-    if (
-      (word[i].toLowerCase() !== word[i].toUpperCase() &&
-        ((word[i].charCodeAt(0) >= 65 && word[i].charCodeAt(0) <= 90) ||
-          (word[i].charCodeAt(0) >= 97 && word[i].charCodeAt(0) <= 122))) ||
-      word[i] === " "
-    ) {
       chars.push(word[i]);
-    }
   }
-
   // The paths for the images are then mapped from
   // the chars array into a new array called paths.
   let paths = [];

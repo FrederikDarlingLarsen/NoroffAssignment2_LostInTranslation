@@ -19,6 +19,16 @@ const Translation = () => {
 
   // Function that handles the submission of the message to the translator.
   const onSubmit = async (data) => {
+
+    // Checking the validity of the message.
+    let valid = data.theMessage.match(/^[A-Za-z\s]*$/)
+
+    // Giving the user an alert if the message is not valid.
+    if(!valid){
+      alert('Please enter a valid message(only english letters and spaces)')
+      return
+    }
+
     if (data.theMessage) {
       setMessage(data.theMessage);
       // Adding the translation to the API.
