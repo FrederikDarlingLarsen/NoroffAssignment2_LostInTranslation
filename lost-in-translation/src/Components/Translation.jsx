@@ -30,7 +30,8 @@ const Translation = () => {
     }
 
     if (data.theMessage) {
-      setMessage(data.theMessage);
+      const toLower = data.theMessage.toLowerCase()
+      setMessage(toLower);
       // Adding the translation to the API.
       const [error, result] = await addTranslation(user, data.theMessage);
       // Saving to session storage and setting the user.
